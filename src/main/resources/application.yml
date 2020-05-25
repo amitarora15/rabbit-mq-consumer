@@ -1,0 +1,45 @@
+server:
+   port: 8082
+   servlet:
+      context-path: '/rabbit-consumer'
+spring:
+  rabbitmq:
+    host: 'localhost'
+    port: 5672                                                
+    username: poc
+    password: poc
+    virtual-host: poc
+    listener:
+      simple:
+        concurrency: 4
+        max-concurrency: 8
+        default-requeue-rejected: false
+        retry:
+          enabled: true
+          initial-interval: 2000
+          max-attempts: 3
+          multiplier: 1.5
+          max-interval: 5000
+application:
+  fifa:
+    espn-queue: 'espn.channel.fifa.update.queue'
+    star-queue: 'star.channel.fifa.update.queue'
+    espn-failure-queue: 'espn.channel.fifa.update.failure.queue'
+    star-failure-queue: 'star.channel.fifa.update.failure.queue'
+    espn-failure-withdlq-queue: 'espn.channel.fifa.update.failure.withdlq.queue'
+    espn-failure-dlq: 'espn.channel.fifa.update.dlq'
+    star-failure-withdlqttl-queue: 'star.channel.fifa.update.failure.withdlqttl.queue'
+    star-failure-dlq: 'star.channel.fifa.update.dlq'
+  tvshow:
+    star-queue: 'tvshow.telecast.star.queue'
+    sony-queue: 'tvshow.telecast.sony.queue'         
+  image:
+    operation:
+      queue: 'image.operation.queue'   
+    compression:
+      queue: 'image.compression.queue'    
+  notification:
+    slack-queue: 'fifa.publish.notification.slack'
+    hangout-queue: 'fifa.publish.notification.hangout'
+    all-queue: 'fifa.publish.notification.all.match'
+    any-queue: 'fifa.publish.notification.any.match'       

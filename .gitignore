@@ -1,0 +1,13 @@
+/.classpath
+/.gradle/
+/.project
+/.settings/
+/bin/
+/build/
+/bin/
+.idea
+rabbit-mq-consumer.iml
+rabbit-mq-consumer.ipr
+rabbit-mq-consumer.iws
+build
+bin
