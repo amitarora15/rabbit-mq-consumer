@@ -1,4 +1,4 @@
-#### Rabbit MQ Producer
+#### Rabbit MQ Consumer
 
 This application is demonstrating the capabilities of rabbit MQ consumers using Spring Boot. 
 #
